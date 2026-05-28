@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bring Your World To Work | Official Guide</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Stable Tailwind CSS v3 Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for Bold Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Premium Playful & Bold Fonts -->
+    <!-- Playful & Bold Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
-    <!-- GSAP for Ultra-Smooth Micro-Animations -->
+    <!-- GSAP for Smooth Micro-Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <style>
@@ -28,16 +28,6 @@
         .mega-shadow {
             box-shadow: 0 12px 0px #1E293B;
             border: 3px solid #1E293B;
-        }
-        .active-tab {
-            background-color: #FF5252;
-            color: white;
-            box-shadow: 0 6px 0px #1E293B;
-        }
-        .tab-inactive {
-            background-color: #FFFFFF;
-            color: #1E293B;
-            box-shadow: 0 6px 0px #1E293B;
         }
         .bouncy {
             animation: miniBounce 1.5s infinite ease-in-out;
@@ -70,23 +60,24 @@
     <!-- High-Contrast Navigation Controls -->
     <nav class="w-full max-w-md mx-auto px-4 my-8 sticky top-4 z-50">
         <div class="flex gap-4 justify-center">
-            <button id="tab-timeline" onclick="switchTab('timeline')" class="active-tab flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
+            <button id="tab-timeline" onclick="switchTab('timeline')" class="flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-[#FF5252] text-white shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
                 <i class="fa-solid fa-list-check"></i> SCHEDULE
             </button>
-            <button id="tab-map" onclick="switchTab('map')" class="tab-inactive flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
+            <button id="tab-map" onclick="switchTab('map')" class="flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-white text-[#1E293B] shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
                 <i class="fa-solid fa-map-location-dot"></i> FLOOR PLAN
             </button>
         </div>
     </nav>
 
-    <!-- Main Live Dynamic Layout Content -->
+    <!-- Main Content Container -->
     <main class="w-full max-w-md mx-auto px-4 flex-1 relative z-10">
         
         <!-- ==================== TAB 1: SCHEDULE ==================== -->
-        <div id="content-timeline" class="space-y-6">
+        <!-- Added explicit style="display: block !important;" to force layout visibility on local servers -->
+        <div id="content-timeline" class="space-y-6" style="display: block !important;">
             
             <!-- CARD 1: REGISTRATION (Royal Blue Block) -->
-            <div class="bg-[#0A58CA] text-white p-5 rounded-3xl mega-shadow transition-all timeline-card">
+            <div class="bg-[#0A58CA] text-white p-5 rounded-3xl mega-shadow timeline-card">
                 <div class="flex justify-between items-start mb-2">
                     <span class="bg-white text-[#0A58CA] text-xs font-black px-3 py-1 rounded-xl shadow-sm border border-black/10">[09:45 AM]</span>
                     <span class="text-white/80 text-lg"><i class="fa-solid fa-id-card-clip bouncy"></i></span>
@@ -99,7 +90,7 @@
             </div>
 
             <!-- CARD 2: KIDS PLAY AREA (Sunny Yellow Block) -->
-            <div class="bg-[#FFC107] text-[#1E293B] p-5 rounded-3xl mega-shadow transition-all timeline-card">
+            <div class="bg-[#FFC107] text-[#1E293B] p-5 rounded-3xl mega-shadow timeline-card">
                 <div class="flex justify-between items-start mb-2">
                     <span class="bg-[#1E293B] text-white text-xs font-black px-3 py-1 rounded-xl">[09:45 AM]</span>
                     <span class="text-[#1E293B] text-xl"><i class="fa-solid fa-face-grin-tears bouncy"></i></span>
@@ -112,20 +103,20 @@
             </div>
 
             <!-- CARD 3: COLLECT CAPS (Vibrant Orange Block) -->
-            <div class="bg-[#FD7E14] text-white p-5 rounded-3xl mega-shadow transition-all timeline-card">
+            <div class="bg-[#FD7E14] text-white p-5 rounded-3xl mega-shadow timeline-card">
                 <div class="flex justify-between items-start mb-2">
                     <span class="bg-white text-[#FD7E14] text-xs font-black px-3 py-1 rounded-xl shadow-sm">[09:45 AM]</span>
                     <span class="text-white text-lg"><i class="fa-solid fa-graduation-cap bouncy"></i></span>
                 </div>
                 <h3 class="card-title text-xl font-bold tracking-wide">COLLECT CAPS FOR KIDS</h3>
-                <p class="text-sm text-orange-500 font-medium mt-1">Grab some cool custom event caps for the little ones.</p>
+                <p class="text-sm text-orange-100 font-medium mt-1">Grab some cool custom event caps for the little ones.</p>
                 <div class="mt-4 pt-3 border-t border-white/20 flex items-center gap-1.5 text-xs font-bold text-yellow-200">
                     <i class="fa-solid fa-location-dot text-white"></i> LOCATION: IN FRONT OF LIFT AREA
                 </div>
             </div>
 
             <!-- CARD 4: FAMILY PHOTO (Bright Coral Red Block) -->
-            <div class="bg-[#DC3545] text-white p-5 rounded-3xl mega-shadow transition-all timeline-card">
+            <div class="bg-[#DC3545] text-white p-5 rounded-3xl mega-shadow timeline-card">
                 <div class="flex justify-between items-start mb-2">
                     <span class="bg-white text-[#DC3545] text-xs font-black px-3 py-1 rounded-xl shadow-sm">[09:45 AM]</span>
                     <span class="text-white text-lg"><i class="fa-solid fa-camera-retro bouncy"></i></span>
@@ -138,7 +129,7 @@
             </div>
 
             <!-- CARD 5: MAIN STAGE ADDRESS (Deep Luxury Royal Purple Block) -->
-            <div class="bg-[#6F42C1] text-white p-6 rounded-3xl mega-shadow transition-all timeline-card relative overflow-hidden">
+            <div class="bg-[#6F42C1] text-white p-6 rounded-3xl mega-shadow timeline-card relative overflow-hidden">
                 <div class="absolute -top-4 -right-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
                 
                 <div class="flex justify-between items-start mb-3">
@@ -151,10 +142,10 @@
                     <i class="fa-solid fa-triangle-exclamation mr-1"></i> ATTENTION: Please gather at the collaboration area by 10:15 to participate!
                 </p>
                 
-                <!-- Inner High Contrast Activities Matrix Grid Layout -->
+                <!-- Inner High Contrast Activities Matrix -->
                 <div class="grid grid-cols-2 gap-2 text-xs text-white bg-black/30 p-3.5 rounded-2xl border border-white/10 font-bold mt-4">
                     <div class="flex items-center gap-1.5 text-emerald-300"><i class="fa-solid fa-circle-check"></i> WELCOME</div>
-                    <div class="flex items-center gap-1.5 text-purple-300"><i class="fa-solid fa-cake-slice text-rose-300"></i> CAKE CUTTING</div>
+                    <div class="flex items-center gap-1.5 text-purple-300"><i class="fa-solid fa-cake-slice"></i> CAKE CUTTING</div>
                     <div class="flex items-center gap-1.5 text-amber-300"><i class="fa-solid fa-shield-halved"></i> SAFETY MESSAGE</div>
                     <div class="flex items-center gap-1.5 text-cyan-300"><i class="fa-solid fa-wand-magic-sparkles"></i> MAGIC SHOW</div>
                     <div class="flex items-center gap-1.5 text-blue-300"><i class="fa-solid fa-users"></i> LEADERS ADDRESS</div>
@@ -166,8 +157,8 @@
                 </div>
             </div>
 
-            <!-- CARD 6: POPCORN STALLS (Vibrant Teal / Orange Fusion Block) -->
-            <div class="bg-[#0DCAF0] text-[#1E293B] p-5 rounded-3xl mega-shadow transition-all timeline-card">
+            <!-- CARD 6: POPCORN STALLS (Vibrant Teal Block) -->
+            <div class="bg-[#0DCAF0] text-[#1E293B] p-5 rounded-3xl mega-shadow timeline-card">
                 <div class="flex justify-between items-start mb-2">
                     <span class="bg-[#1E293B] text-white text-xs font-black px-3 py-1 rounded-xl">[09:45 AM ONWARDS]</span>
                     <span class="text-[#1E293B] text-lg"><i class="fa-solid fa-cookie-bite bouncy"></i></span>
@@ -180,7 +171,7 @@
             </div>
 
             <!-- CARD 7: SNACK BOX (Vibrant Emerald Green Block) -->
-            <div class="bg-[#198754] text-white p-5 rounded-3xl mega-shadow transition-all timeline-card">
+            <div class="bg-[#198754] text-white p-5 rounded-3xl mega-shadow timeline-card">
                 <div class="flex justify-between items-start mb-2">
                     <span class="bg-white text-[#198754] text-xs font-black px-3 py-1 rounded-xl shadow-sm">[11:45 AM ONWARDS]</span>
                     <span class="text-white text-lg"><i class="fa-solid fa-utensils bouncy"></i></span>
@@ -193,7 +184,7 @@
             </div>
 
             <!-- CARD 8: EXIT GOODIES (Classic Ruby Red Block) -->
-            <div class="bg-[#B91C1C] text-white p-5 rounded-3xl mega-shadow transition-all timeline-card">
+            <div class="bg-[#B91C1C] text-white p-5 rounded-3xl mega-shadow timeline-card">
                 <div class="flex justify-between items-start mb-2">
                     <span class="bg-white text-[#B91C1C] text-xs font-black px-3 py-1 rounded-xl shadow-sm">[12:00 PM ONWARDS]</span>
                     <span class="text-white text-lg"><i class="fa-solid fa-gift bouncy"></i></span>
@@ -212,7 +203,8 @@
         </div>
 
         <!-- ==================== TAB 2: INTERACTIVE FLOOR PLAN MAP ==================== -->
-        <div id="content-map" class="hidden space-y-4">
+        <!-- Explicit style="display: none;" handles initial load safely -->
+        <div id="content-map" class="space-y-4" style="display: none;">
             <div class="bg-white p-5 rounded-3xl mega-shadow">
                 <div class="flex items-center justify-between mb-4">
                     <h3 class="font-bold text-lg text-[#1E293B]"><i class="fa-solid fa-map-location text-[#FF5252] mr-2"></i>OFFICE MAP GUIDE</h3>
@@ -241,11 +233,11 @@
 
     <!-- Tab Control & Animation Orchestration Scripts -->
     <script>
-        // Trigger high-end pop reveal animations as soon as the DOM loads completely
+        // Trigger clean, quick pop reveal animations on startup
         window.addEventListener('DOMContentLoaded', () => {
-            gsap.from("header", { duration: 0.8, y: -40, opacity: 0, ease: "back.out(1.5)" });
-            gsap.from("nav", { duration: 0.6, scale: 0.8, opacity: 0, ease: "back.out(1.2)", delay: 0.3 });
-            gsap.from(".timeline-card", { duration: 0.6, y: 50, opacity: 0, stagger: 0.08, ease: "power3.out", delay: 0.4 });
+            gsap.from("header", { duration: 0.5, y: -20, opacity: 0, ease: "power2.out" });
+            gsap.from("nav", { duration: 0.4, scale: 0.95, opacity: 0, ease: "power2.out", delay: 0.1 });
+            gsap.from(".timeline-card", { duration: 0.5, y: 20, opacity: 0, stagger: 0.04, ease: "power2.out", delay: 0.2 });
         });
 
         function switchTab(tab) {
@@ -255,22 +247,22 @@
             const mapContent = document.getElementById('content-map');
 
             if (tab === 'timeline') {
-                timelineBtn.className = "active-tab flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
-                mapBtn.className = "tab-inactive flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
+                timelineBtn.className = "flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-[#FF5252] text-white shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
+                mapBtn.className = "flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-white text-[#1E293B] shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
                 
-                mapContent.classList.add('hidden');
-                timelineContent.classList.remove('hidden');
+                mapContent.style.setProperty('display', 'none', 'important');
+                timelineContent.style.setProperty('display', 'block', 'important');
                 
-                gsap.fromTo(timelineContent, { opacity: 0, y: 15 }, { duration: 0.4, opacity: 1, y: 0, ease: "power2.out" });
+                gsap.fromTo(timelineContent, { opacity: 0, y: 10 }, { duration: 0.3, opacity: 1, y: 0, ease: "power2.out" });
             } else if (tab === 'map') {
-                mapBtn.className = "active-tab flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
-                timelineBtn.className = "tab-inactive flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
+                mapBtn.className = "flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-[#FF5252] text-white shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
+                timelineBtn.className = "flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-white text-[#1E293B] shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
                 
-                timelineContent.classList.add('hidden');
-                mapContent.classList.remove('hidden');
+                timelineContent.style.setProperty('display', 'none', 'important');
+                mapContent.style.setProperty('display', 'block', 'important');
                 
-                gsap.fromTo(mapContent, { opacity: 0, y: 15 }, { duration: 0.4, opacity: 1, y: 0, ease: "power2.out" });
-                gsap.fromTo("#floor-plan-img", { scale: 0.95 }, { duration: 0.5, scale: 1, ease: "back.out(1.2)" });
+                gsap.fromTo(mapContent, { opacity: 0, y: 10 }, { duration: 0.3, opacity: 1, y: 0, ease: "power2.out" });
+                gsap.fromTo("#floor-plan-img", { scale: 0.98 }, { duration: 0.4, scale: 1, ease: "power2.out" });
             }
         }
     </script>
