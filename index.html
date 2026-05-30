@@ -3,268 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bring Your World To Work | Official Guide</title>
+    <title>Event Showcase</title>
     <!-- Stable Tailwind CSS v3 Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Bold Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Playful & Bold Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
-    <!-- GSAP for Smooth Micro-Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FFFDF9; /* Warm, bright festive background */
-            color: #1E293B;
-            overflow-x: hidden;
+            background-color: #0f172a; /* Sleek dark backup background */
         }
-        h1, h2, h3, .card-title {
-            font-family: 'Fredoka', sans-serif;
+        /* Custom smooth scrollbar for mobile */
+        ::-webkit-scrollbar {
+            width: 4px;
         }
-        .mega-shadow {
-            box-shadow: 0 12px 0px #1E293B;
-            border: 3px solid #1E293B;
-        }
-        .bouncy {
-            animation: miniBounce 1.5s infinite ease-in-out;
-        }
-        @keyframes miniBounce {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-4px) scale(1.02); }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
         }
     </style>
 </head>
-<body class="min-h-screen pb-16">
+<body class="min-h-screen w-full flex items-center justify-center p-3 sm:p-6 relative overflow-x-hidden antialiased">
 
-    <!-- Top Carnival Sparkle Border -->
-    <div class="w-full h-3 bg-gradient-to-r from-blue-500 via-yellow-400 via-orange-500 via-purple-600 via-green-500 to-red-500"></div>
+    <!-- Premium Dynamic Blur Background (Uses your image to create matching ambient lighting) -->
+    <div class="absolute inset-0 w-full h-full bg-cover bg-center scale-110 blur-2xl opacity-40 pointer-events-none" 
+         style="background-image: url('img.png');">
+    </div>
+    
+    <!-- Dark overlay to ensure crisp contrast -->
+    <div class="absolute inset-0 w-full h-full bg-slate-950/50 pointer-events-none"></div>
 
-    <!-- Header Section -->
-    <header class="w-full max-w-xl mx-auto px-6 pt-8 text-center relative z-10">
-        <!-- Floating Badge -->
-        <div class="inline-block bg-[#1E293B] text-[#FF9F43] text-xs font-black tracking-widest px-4 py-1.5 rounded-full border-2 border-[#1E293B] uppercase mb-4 shadow-md">
-            <i class="fa-solid fa-sparkles mr-1 text-yellow-400"></i> MAY 31 • THE GREAT FAMILY DAY
-        </div>
+    <!-- Main Mobile-Optimized Container -->
+    <main class="w-full max-w-md bg-white/5 backdrop-blur-md rounded-3xl p-3 border border-white/10 shadow-2xl relative z-10 flex flex-col items-center justify-center transition-all duration-300">
         
-        <!-- Big Premium Branded Headline -->
-        <h1 class="text-4xl md:text-5xl font-black tracking-tight text-[#1E293B] leading-none">
-            BRING YOUR <span class="text-[#FF5252] underline decoration-yellow-400 decoration-4">WORLD</span> TO WORK
-        </h1>
-        <p class="text-slate-700 text-sm font-bold tracking-wide mt-3 uppercase">Your Awesome Live Event Guide</p>
-    </header>
-
-    <!-- High-Contrast Navigation Controls -->
-    <nav class="w-full max-w-md mx-auto px-4 my-8 sticky top-4 z-50">
-        <div class="flex gap-4 justify-center">
-            <button id="tab-timeline" onclick="switchTab('timeline')" class="flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-[#FF5252] text-white shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
-                <i class="fa-solid fa-list-check"></i> SCHEDULE
-            </button>
-            <button id="tab-map" onclick="switchTab('map')" class="flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-white text-[#1E293B] shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
-                <i class="fa-solid fa-map-location-dot"></i> FLOOR PLAN
-            </button>
+        <!-- Interactive Image Frame: Preserves native aspect ratio and resolution -->
+        <div class="w-full rounded-2xl overflow-hidden bg-black/20 flex items-center justify-center shadow-inner group">
+            <img 
+                src="img.png" 
+                alt="Event Showcase" 
+                class="w-full h-auto max-h-[82vh] object-contain select-none pointer-events-auto rounded-2xl transition-transform duration-300 active:scale-[1.02]"
+                loading="eager"
+            />
         </div>
-    </nav>
 
-    <!-- Main Content Container -->
-    <main class="w-full max-w-md mx-auto px-4 flex-1 relative z-10">
+        <!-- Sleek Quick Hint for Mobile Users -->
+        <p class="text-white/40 text-[11px] font-medium tracking-wide mt-3 text-center uppercase font-sans">
+            <i class="fa-solid fa-expand mr-1 text-white/20"></i> Pinch or double-tap to zoom image
+        </p>
         
-        <!-- ==================== TAB 1: SCHEDULE ==================== -->
-        <!-- Added explicit style="display: block !important;" to force layout visibility on local servers -->
-        <div id="content-timeline" class="space-y-6" style="display: block !important;">
-            
-            <!-- CARD 1: REGISTRATION (Royal Blue Block) -->
-            <div class="bg-[#0A58CA] text-white p-5 rounded-3xl mega-shadow timeline-card">
-                <div class="flex justify-between items-start mb-2">
-                    <span class="bg-white text-[#0A58CA] text-xs font-black px-3 py-1 rounded-xl shadow-sm border border-black/10">[09:45 AM]</span>
-                    <span class="text-white/80 text-lg"><i class="fa-solid fa-id-card-clip bouncy"></i></span>
-                </div>
-                <h3 class="card-title text-xl font-bold tracking-wide">REGISTRATION FOR THE EVENT</h3>
-                <p class="text-sm text-blue-100 font-medium mt-1">Collect your event access coupons here!</p>
-                <div class="mt-4 pt-3 border-t border-white/20 flex items-center gap-1.5 text-xs font-bold text-yellow-300">
-                    <i class="fa-solid fa-location-dot text-white"></i> LOCATION: RECEPTION AREA
-                </div>
-            </div>
-
-            <!-- CARD 2: KIDS PLAY AREA (Sunny Yellow Block) -->
-            <div class="bg-[#FFC107] text-[#1E293B] p-5 rounded-3xl mega-shadow timeline-card">
-                <div class="flex justify-between items-start mb-2">
-                    <span class="bg-[#1E293B] text-white text-xs font-black px-3 py-1 rounded-xl">[09:45 AM]</span>
-                    <span class="text-[#1E293B] text-xl"><i class="fa-solid fa-face-grin-tears bouncy"></i></span>
-                </div>
-                <h3 class="card-title text-xl font-bold tracking-wide">KIDS PLAY AREA / LIVE CHARACTER</h3>
-                <p class="text-sm text-[#2d3748] font-bold mt-1">Come hang out with <span class="bg-[#1E293B] text-[#FFC107] px-2 py-0.5 rounded-lg text-xs">MICKEY MOUSE</span></p>
-                <div class="mt-4 pt-3 border-t border-black/10 flex items-center gap-1.5 text-xs font-black text-[#1E293B]">
-                    <i class="fa-solid fa-location-dot text-[#1E293B]/70"></i> LOCATION: IN FRONT OF LIFT AREA
-                </div>
-            </div>
-
-            <!-- CARD 3: COLLECT CAPS (Vibrant Orange Block) -->
-            <div class="bg-[#FD7E14] text-white p-5 rounded-3xl mega-shadow timeline-card">
-                <div class="flex justify-between items-start mb-2">
-                    <span class="bg-white text-[#FD7E14] text-xs font-black px-3 py-1 rounded-xl shadow-sm">[09:45 AM]</span>
-                    <span class="text-white text-lg"><i class="fa-solid fa-graduation-cap bouncy"></i></span>
-                </div>
-                <h3 class="card-title text-xl font-bold tracking-wide">COLLECT CAPS FOR KIDS</h3>
-                <p class="text-sm text-orange-100 font-medium mt-1">Grab some cool custom event caps for the little ones.</p>
-                <div class="mt-4 pt-3 border-t border-white/20 flex items-center gap-1.5 text-xs font-bold text-yellow-200">
-                    <i class="fa-solid fa-location-dot text-white"></i> LOCATION: IN FRONT OF LIFT AREA
-                </div>
-            </div>
-
-            <!-- CARD 4: FAMILY PHOTO (Bright Coral Red Block) -->
-            <div class="bg-[#DC3545] text-white p-5 rounded-3xl mega-shadow timeline-card">
-                <div class="flex justify-between items-start mb-2">
-                    <span class="bg-white text-[#DC3545] text-xs font-black px-3 py-1 rounded-xl shadow-sm">[09:45 AM]</span>
-                    <span class="text-white text-lg"><i class="fa-solid fa-camera-retro bouncy"></i></span>
-                </div>
-                <h3 class="card-title text-xl font-bold tracking-wide">FAMILY PHOTO SESSION</h3>
-                <p class="text-sm text-red-100 font-medium mt-1">Capture beautiful memories together at our dedicated photo desk.</p>
-                <div class="mt-4 pt-3 border-t border-white/20 flex items-center gap-1.5 text-xs font-bold text-yellow-200">
-                    <i class="fa-solid fa-location-dot text-white"></i> LOCATION: RECEPTION AREA
-                </div>
-            </div>
-
-            <!-- CARD 5: MAIN STAGE ADDRESS (Deep Luxury Royal Purple Block) -->
-            <div class="bg-[#6F42C1] text-white p-6 rounded-3xl mega-shadow timeline-card relative overflow-hidden">
-                <div class="absolute -top-4 -right-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
-                
-                <div class="flex justify-between items-start mb-3">
-                    <span class="bg-[#212529] text-[#E0CFFC] text-xs font-black px-3 py-1 rounded-xl tracking-wider border border-white/10">[10:15 AM - 11:45 AM]</span>
-                    <span class="text-yellow-400 text-xl"><i class="fa-solid fa-crown animate-pulse"></i></span>
-                </div>
-                
-                <h3 class="card-title text-2xl font-bold tracking-wide text-white leading-none">MAIN EVENT LEADERSHIP ADDRESS & FUN ACTIVITIES</h3>
-                <p class="text-xs text-yellow-300 font-bold mt-2 bg-black/20 p-2 rounded-xl border border-white/10">
-                    <i class="fa-solid fa-triangle-exclamation mr-1"></i> ATTENTION: Please gather at the collaboration area by 10:15 to participate!
-                </p>
-                
-                <!-- Inner High Contrast Activities Matrix -->
-                <div class="grid grid-cols-2 gap-2 text-xs text-white bg-black/30 p-3.5 rounded-2xl border border-white/10 font-bold mt-4">
-                    <div class="flex items-center gap-1.5 text-emerald-300"><i class="fa-solid fa-circle-check"></i> WELCOME</div>
-                    <div class="flex items-center gap-1.5 text-purple-300"><i class="fa-solid fa-cake-slice"></i> CAKE CUTTING</div>
-                    <div class="flex items-center gap-1.5 text-amber-300"><i class="fa-solid fa-shield-halved"></i> SAFETY MESSAGE</div>
-                    <div class="flex items-center gap-1.5 text-cyan-300"><i class="fa-solid fa-wand-magic-sparkles"></i> MAGIC SHOW</div>
-                    <div class="flex items-center gap-1.5 text-blue-300"><i class="fa-solid fa-users"></i> LEADERS ADDRESS</div>
-                    <div class="flex items-center gap-1.5 text-pink-300"><i class="fa-solid fa-ticket-simple"></i> RAFFLE DRAW</div>
-                </div>
-                
-                <div class="mt-4 pt-3 border-t border-white/20 flex items-center gap-1.5 text-xs font-bold text-purple-200">
-                    <i class="fa-solid fa-location-dot text-white"></i> LOCATION: COLLABORATION AREA
-                </div>
-            </div>
-
-            <!-- CARD 6: POPCORN STALLS (Vibrant Teal Block) -->
-            <div class="bg-[#0DCAF0] text-[#1E293B] p-5 rounded-3xl mega-shadow timeline-card">
-                <div class="flex justify-between items-start mb-2">
-                    <span class="bg-[#1E293B] text-white text-xs font-black px-3 py-1 rounded-xl">[09:45 AM ONWARDS]</span>
-                    <span class="text-[#1E293B] text-lg"><i class="fa-solid fa-cookie-bite bouncy"></i></span>
-                </div>
-                <h3 class="card-title text-xl font-bold tracking-wide">POPCORN AND CANDYFLOSS STALLS</h3>
-                <p class="text-sm text-[#2d3748] font-bold mt-1">Unlimited sweet & salty treats for everyone!</p>
-                <div class="mt-4 pt-3 border-t border-black/10 flex items-center gap-1.5 text-xs font-black text-[#1E293B]">
-                    <i class="fa-solid fa-location-dot text-[#1E293B]/70"></i> LOCATION: CAFETERIA
-                </div>
-            </div>
-
-            <!-- CARD 7: SNACK BOX (Vibrant Emerald Green Block) -->
-            <div class="bg-[#198754] text-white p-5 rounded-3xl mega-shadow timeline-card">
-                <div class="flex justify-between items-start mb-2">
-                    <span class="bg-white text-[#198754] text-xs font-black px-3 py-1 rounded-xl shadow-sm">[11:45 AM ONWARDS]</span>
-                    <span class="text-white text-lg"><i class="fa-solid fa-utensils bouncy"></i></span>
-                </div>
-                <h3 class="card-title text-xl font-bold tracking-wide">SNACK BOX COLLECTION</h3>
-                <p class="text-sm text-green-100 font-medium mt-1">Present your coupons to pick up delicious refreshments boxes.</p>
-                <div class="mt-4 pt-3 border-t border-white/20 flex items-center gap-1.5 text-xs font-bold text-yellow-300">
-                    <i class="fa-solid fa-location-dot text-white"></i> LOCATION: CAFETERIA
-                </div>
-            </div>
-
-            <!-- CARD 8: EXIT GOODIES (Classic Ruby Red Block) -->
-            <div class="bg-[#B91C1C] text-white p-5 rounded-3xl mega-shadow timeline-card">
-                <div class="flex justify-between items-start mb-2">
-                    <span class="bg-white text-[#B91C1C] text-xs font-black px-3 py-1 rounded-xl shadow-sm">[12:00 PM ONWARDS]</span>
-                    <span class="text-white text-lg"><i class="fa-solid fa-gift bouncy"></i></span>
-                </div>
-                <h3 class="card-title text-xl font-bold tracking-wide">WRITE ON FLEX WALL & GOODIES</h3>
-                <p class="text-sm text-red-100 font-medium mt-1">Drop your lovely comments on our giant family wall, pick up printed family photos, and get your final parting giveaways.</p>
-                <div class="mt-4 pt-3 border-t border-white/20 flex items-center gap-1.5 text-xs font-bold text-yellow-300">
-                    <i class="fa-solid fa-location-dot text-white"></i> LOCATION: EXIT AREA
-                </div>
-            </div>
-
-            <!-- Quick Help Assistance Desk Callout Footer -->
-            <div class="bg-white p-4 rounded-3xl text-center border-3 border-dashed border-[#1E293B] font-black text-sm text-[#1E293B] mt-6">
-                <i class="fa-solid fa-circle-question text-[#FF5252] mr-1"></i> HAVE QUESTIONS? CONNECT WITH OUR VOLUNTEERS.
-            </div>
-        </div>
-
-        <!-- ==================== TAB 2: INTERACTIVE FLOOR PLAN MAP ==================== -->
-        <!-- Explicit style="display: none;" handles initial load safely -->
-        <div id="content-map" class="space-y-4" style="display: none;">
-            <div class="bg-white p-5 rounded-3xl mega-shadow">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-bold text-lg text-[#1E293B]"><i class="fa-solid fa-map-location text-[#FF5252] mr-2"></i>OFFICE MAP GUIDE</h3>
-                    <span class="text-[10px] bg-[#1E293B] text-white px-2 py-1 rounded-lg font-mono font-bold">PINCH TO ZOOM</span>
-                </div>
-                
-                <!-- Map Content Panel Image Placeholder linking to layout file assets -->
-                <div class="w-full bg-slate-100 rounded-2xl overflow-hidden border-2 border-[#1E293B] shadow-inner">
-                    <img src="Guest Event Flow - Bring your world to work V1_page-0002.jpg" alt="Office Flow Layout Map" class="w-full h-auto object-contain" id="floor-plan-img">
-                </div>
-
-                <!-- High Contrast Key Navigation Route Points -->
-                <div class="mt-5 space-y-3 pt-5 border-t-2 border-slate-100">
-                    <div class="text-xs font-black text-slate-500 uppercase tracking-wider mb-2">Quick Navigation Coordinates:</div>
-                    <div class="grid grid-cols-2 gap-3 text-[11px] font-black">
-                        <div class="p-3 bg-emerald-50 rounded-xl border-2 border-emerald-500 text-emerald-800"><i class="fa-solid fa-door-open mr-1"></i> ENTRY 1: Reception Desk</div>
-                        <div class="p-3 bg-amber-50 rounded-xl border-2 border-amber-500 text-amber-800"><i class="fa-solid fa-elevator mr-1"></i> ENTRY 2 & 3: Elevators</div>
-                        <div class="p-3 bg-cyan-50 rounded-xl border-2 border-cyan-500 text-cyan-800"><i class="fa-solid fa-hotel mr-1"></i> LOBBIES: Main Lifts</div>
-                        <div class="p-3 bg-rose-50 rounded-xl border-2 border-rose-500 text-rose-800"><i class="fa-solid fa-stairs mr-1"></i> STAIRS: Corner Exits</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </main>
 
-    <!-- Tab Control & Animation Orchestration Scripts -->
-    <script>
-        // Trigger clean, quick pop reveal animations on startup
-        window.addEventListener('DOMContentLoaded', () => {
-            gsap.from("header", { duration: 0.5, y: -20, opacity: 0, ease: "power2.out" });
-            gsap.from("nav", { duration: 0.4, scale: 0.95, opacity: 0, ease: "power2.out", delay: 0.1 });
-            gsap.from(".timeline-card", { duration: 0.5, y: 20, opacity: 0, stagger: 0.04, ease: "power2.out", delay: 0.2 });
-        });
-
-        function switchTab(tab) {
-            const timelineBtn = document.getElementById('tab-timeline');
-            const mapBtn = document.getElementById('tab-map');
-            const timelineContent = document.getElementById('content-timeline');
-            const mapContent = document.getElementById('content-map');
-
-            if (tab === 'timeline') {
-                timelineBtn.className = "flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-[#FF5252] text-white shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
-                mapBtn.className = "flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-white text-[#1E293B] shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
-                
-                mapContent.style.setProperty('display', 'none', 'important');
-                timelineContent.style.setProperty('display', 'block', 'important');
-                
-                gsap.fromTo(timelineContent, { opacity: 0, y: 10 }, { duration: 0.3, opacity: 1, y: 0, ease: "power2.out" });
-            } else if (tab === 'map') {
-                mapBtn.className = "flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-[#FF5252] text-white shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
-                timelineBtn.className = "flex-1 py-3 px-6 rounded-2xl text-sm font-black border-3 border-[#1E293B] bg-white text-[#1E293B] shadow-[0_6px_0px_#1E293B] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer";
-                
-                timelineContent.style.setProperty('display', 'none', 'important');
-                mapContent.style.setProperty('display', 'block', 'important');
-                
-                gsap.fromTo(mapContent, { opacity: 0, y: 10 }, { duration: 0.3, opacity: 1, y: 0, ease: "power2.out" });
-                gsap.fromTo("#floor-plan-img", { scale: 0.98 }, { duration: 0.4, scale: 1, ease: "power2.out" });
-            }
-        }
-    </script>
 </body>
 </html>
